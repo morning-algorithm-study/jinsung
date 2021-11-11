@@ -13,6 +13,12 @@ const commands = [
 
 /* K번째 수 구하기 */
 const solution = (array, commands) => {
-  var answer = [];
-  return answer;
+  return commands.map((command) => {
+    [startIdx, endIdx, findIdx] = command;
+    return (newArr = array.slice(startIdx - 1, endIdx).sort((a, b) => a - b)[
+      findIdx - 1
+    ]);
+  });
 };
+
+console.log(solution(array, commands));
