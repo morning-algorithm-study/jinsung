@@ -14,4 +14,8 @@
 
 ### [7. [신규 아이디 추천] - 2021. 11. 17](https://github.com/morning-algorithm-study/jinsung/blob/main/Lv1/07_%EC%8B%A0%EA%B7%9C%EC%95%84%EC%9D%B4%EB%94%94%EC%B6%94%EC%B2%9C.js)
 
-### 8. [나머지가 1인 안되는 수] - 2021. 11. 18
+### [8. [나머지가 1인 안되는 수] - 2021. 11. 18](https://github.com/morning-algorithm-study/jinsung/blob/main/Lv1/08_%EB%82%98%EB%A8%B8%EC%A7%80%EA%B0%801%EC%9D%B8%EB%90%98%EB%8A%94%EC%88%98.js)
+
+### 9. [x만큼간격이있는n개수] - 2021.11.19
+
+### 10. [최소직사각형] - 2021.11.20
