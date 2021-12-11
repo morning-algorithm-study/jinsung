@@ -1,6 +1,6 @@
 /*
 https://www.acmicpc.net/problem/10828
-스택
+스택 - LIFO
 */
 
 /* 문제

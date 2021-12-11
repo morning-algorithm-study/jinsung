@@ -1,42 +1,23 @@
 /* 문제
-정수를 저장하는 스택을 구현한 다음, 입력으로 주어지는 명령을 처리하는 프로그램을 작성하시오.
-
-명령은 총 다섯 가지이다.
-
-push X: 정수 X를 스택에 넣는 연산이다.
-pop: 스택에서 가장 위에 있는 정수를 빼고, 그 수를 출력한다. 만약 스택에 들어있는 정수가 없는 경우에는 -1을 출력한다.
-size: 스택에 들어있는 정수의 개수를 출력한다.
-empty: 스택이 비어있으면 1, 아니면 0을 출력한다.
-top: 스택의 가장 위에 있는 정수를 출력한다. 만약 스택에 들어있는 정수가 없는 경우에는 -1을 출력한다.
-*/
-
-/* 입력
-첫째 줄에 주어지는 명령의 수 N (1 ≤ N ≤ 10,000)이 주어진다. 둘째 줄부터 N개의 줄에는 명령이 하나씩 주어진다. 
-주어지는 정수는 1보다 크거나 같고, 100,000보다 작거나 같다. 
-문제에 나와있지 않은 명령이 주어지는 경우는 없다.
+나코더 기장 재민이는 동아리 회식을 준비하기 위해서 장부를 관리하는 중이다.
+재현이는 재민이를 도와서 돈을 관리하는 중인데, 애석하게도 항상 정신없는 재현이는 돈을 실수로 잘못 부르는 사고를 치기 일쑤였다.
+재현이는 잘못된 수를 부를 때마다 0을 외쳐서, 가장 최근에 재민이가 쓴 수를 지우게 시킨다.
+재민이는 이렇게 모든 수를 받아 적은 후 그 수의 합을 알고 싶어 한다. 재민이를 도와주자!
 */
 
 let fs = require("fs");
 let input = fs.readFileSync("etc.txt").toString().split("\n");
-const arr = [];
-const result = [];
+input.shift();
+const newArr = [];
+
 for (let i = 0; i < input.length; i++) {
-  // push 일경우
-  if (input[i].indexOf("push") !== -1) {
-    const pushArr = input[i].split(" ");
-    arr.push(+pushArr[1]);
-    // pop일 경우
-  } else if (input[i].indexOf("pop") !== -1) {
-    arr.length === 0 ? result.push(-1) : result.push(arr[arr.length - 1]);
-    arr.pop();
-    // top 일 경우
-  } else if (input[i].indexOf("top") !== -1) {
-    result.push(arr[arr.length - 1] ? arr[arr.length - 1] : -1);
-    // size 일 경우
-  } else if (input[i].indexOf("size") !== -1) {
-    result.push(arr.length);
-  } else if (input[i].indexOf("empty") !== -1) {
-    arr.length === 0 ? result.push(1) : result.push(0);
+  if (input[i] === "0") {
+    newArr.pop();
+  } else {
+    newArr.push(+input[i]);
   }
 }
-console.log(result.join("\n"));
+
+const sum = newArr.reduce((acc, crr) => acc + crr, 0);
+
+console.log(sum);
