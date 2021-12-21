@@ -44,6 +44,7 @@ const countedNames = names.reduce(function (allNames, name) {
   if (name in allNames) {
     allNames[name]++;
   } else {
+    // 빈값일때 초기화 용도
     allNames[name] = 1;
   }
   return allNames;
@@ -160,6 +161,6 @@ if (!Array.prototype.mapUsingReduce) {
   };
 }
 
-[1, 2, , 3].mapUsingReduce(
+[1, 2, 3].mapUsingReduce(
   (currentValue, index, array) => currentValue + index + array.length
 ); // [5, 7, , 10]
